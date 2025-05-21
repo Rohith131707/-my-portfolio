@@ -26,8 +26,10 @@ const About = () => {
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      // Save the current ref value to avoid the warning
+      const currentRef = sectionRef.current;
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
