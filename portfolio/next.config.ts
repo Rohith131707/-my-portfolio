@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // Remove the 'output: export' for Vercel deployment
   images: {
-    unoptimized: true,
+    domains: ['images.unsplash.com'],
+    formats: ['image/avif', 'image/webp'],
   },
 };
 
