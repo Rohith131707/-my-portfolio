@@ -5,8 +5,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/-my-portfolio',
-  assetPrefix: '/-my-portfolio',
+  // Remove basePath and assetPrefix for local development
+  // These will be added only for production GitHub Pages
+  ...(process.env.NODE_ENV === 'production' && {
+    basePath: '/-my-portfolio',
+    assetPrefix: '/-my-portfolio',
+  }),
   eslint: {
     ignoreDuringBuilds: true,
   },
