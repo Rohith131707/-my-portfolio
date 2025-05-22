@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
-  // Remove basePath and assetPrefix for local development
-  // These will be added only for production GitHub Pages
-  ...(process.env.NODE_ENV === 'production' && {
+  // Only use static export and basePath for GitHub Pages
+  // Vercel handles deployment automatically without these settings
+  ...(process.env.GITHUB_ACTIONS && {
+    output: 'export',
+    trailingSlash: true,
     basePath: '/-my-portfolio',
     assetPrefix: '/-my-portfolio',
   }),
+  images: {
+    unoptimized: true,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
