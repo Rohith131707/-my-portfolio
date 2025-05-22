@@ -1,7 +1,8 @@
 {
-  "buildCommand": "cd portfolio && npm install && npm run build",
+  "buildCommand": "cd portfolio && npm install --legacy-peer-deps && npm run build",
   "outputDirectory": "portfolio/.next",
   "framework": "nextjs",
+  "installCommand": "cd portfolio && npm install --legacy-peer-deps",
   "rewrites": [
     { "source": "/(.*)", "destination": "/portfolio/$1" }
   ]

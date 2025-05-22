@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vercel Deployment Guide</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        h1 {
+            color: #2563eb;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            color: #1e40af;
+            margin-top: 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+        .links {
+            margin-top: 15px;
+        }
+        .note {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: 10px;
+        }
+        .steps {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        .steps li {
+            margin-bottom: 10px;
+        }
+        .alert {
+            background-color: #fee2e2;
+            border-left: 4px solid #ef4444;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .success {
+            background-color: #dcfce7;
+            border-left: 4px solid #22c55e;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        code {
+            background-color: #f1f5f9;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vercel Deployment Guide</h1>
+    
+    <div class="card">
+        <h2>Fixed Configuration</h2>
+        <p>We've updated your Next.js configuration to work properly with Vercel:</p>
+        <ul>
+            <li>Removed <code>output: 'export'</code> from next.config.ts</li>
+            <li>Updated image configuration</li>
+            <li>Removed turbopack from dev script</li>
+            <li>Added vercel.json configuration file</li>
+        </ul>
+        <div class="success">
+            These changes have been committed to your GitHub repository.
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>Deploy to Vercel</h2>
+        <p>Now you can deploy your portfolio to Vercel with these steps:</p>
+        
+        <div class="steps">
+            <ol>
+                <li>Go to <a href="https://vercel.com/new" target="_blank">https://vercel.com/new</a></li>
+                <li>Sign in with GitHub (if not already signed in)</li>
+                <li>Select the repository: <code>Rohith131707/-my-portfolio</code></li>
+                <li>In the configuration screen:
+                    <ul>
+                        <li>Framework Preset: Next.js</li>
+                        <li>Root Directory: <code>portfolio</code> (important!)</li>
+                        <li>Build Command: <code>next build</code></li>
+                        <li>Output Directory: <code>.next</code></li>
+                    </ul>
+                </li>
+                <li>Click "Deploy"</li>
+            </ol>
+        </div>
+        
+        <div class="alert">
+            <strong>Important:</strong> Make sure to set the Root Directory to <code>portfolio</code> since your Next.js project is in a subdirectory.
+        </div>
+        
+        <div class="links">
+            <a href="https://vercel.com/new/import?s=https%3A%2F%2Fgithub.com%2FRohith131707%2F-my-portfolio&hasTrialAvailable=1&showOptionalTeamCreation=false" class="btn" target="_blank">Deploy to Vercel</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>After Deployment</h2>
+        <p>Once your site is deployed:</p>
+        <ul>
+            <li>Vercel will provide you with a URL (like <code>my-portfolio-username.vercel.app</code>)</li>
+            <li>Any future changes you push to your GitHub repository will automatically be deployed</li>
+            <li>You can add a custom domain in the Vercel dashboard if desired</li>
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h2>Troubleshooting</h2>
+        <p>If you still encounter issues:</p>
+        <ul>
+            <li>Check the build logs in Vercel for specific errors</li>
+            <li>Make sure you selected <code>portfolio</code> as the Root Directory</li>
+            <li>Try deploying directly from the Vercel dashboard</li>
+        </ul>
+    </div>
+</body>
+</html>
